@@ -1,0 +1,52 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:bloemsamenstelling">
+
+   <!-- 
+    <Style Name="Ellipse" TargetType="x:Type ">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="x:Type ComboBox">
+                    <Ellipse Height="100" Width="100" Fill="{Binding ElementName=ComboBox, Path=Value}" Stroke="{Binding ElementName=ComboBox, Path=Value}" StrokeThickness="{Binding ElementName=slider, Path=Value}"
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+-->
+    <Color x:Key="geel" A="255" R="0" G="100" B="100"></Color>
+    <SolidColorBrush x:Key="geelbrush" Color="{StaticResource geel}"></SolidColorBrush>
+    <!--
+    <DataTemplate>
+        <Ellipse x:Key="cirkel" Width="100" Height="100" Fill="{Binding Path=geelbrush}">
+        
+    </DataTemplate> 
+        -->
+    <Style TargetType="{x:Type Ellipse}">
+        <Setter Property="Width" Value="100"></Setter>
+        <Setter Property="Height" Value="100"></Setter>
+        
+        <Setter Property="Fill" Value="{Binding ElementName=cirkelsKleuren, Path=SelectedValue}"></Setter>
+
+        <Setter Property="Stroke" Value="{Binding ElementName=cirkelKaderKleuren, Path=SelectedValue}"></Setter>
+
+        <Setter Property="StrokeThickness" Value="{Binding ElementName=diktecirkelSlider, Path=Value}"></Setter>
+    </Style>
+
+    <Style TargetType="{x:Type Rectangle}">
+        <Setter Property="Width" Value="20"></Setter>
+        <Setter Property="Height" Value="20"></Setter>
+
+        <Setter Property="Fill" Value="{Binding ElementName=rechthoekenKleuren, Path=SelectedValue}"></Setter>
+
+        <Setter Property="Stroke" Value="{Binding ElementName=rechthoekKaderKleuren, Path=SelectedValue}"></Setter>
+
+        <Setter Property="StrokeThickness" Value="{Binding ElementName=dikterechthoekSlider, Path=Value}"></Setter>
+    </Style>
+
+    <Style TargetType="{x:Type Label}">
+        <Setter Property="Foreground" Value="Black"></Setter>
+    </Style>
+           
+    
+    
+</ResourceDictionary>
